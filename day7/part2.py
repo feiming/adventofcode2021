@@ -5,9 +5,12 @@ data = [int(i) for i in data[0].split(",")]
 
 result = {}
 for x in range(2000):
+    print(x)
     fuel = 0
     for i in data:
-        fuel += abs(x - i)
+        step = abs(x - i)
+        fuel += step + sum([c for c in range(step)])
     result[x] = fuel
-print(min(result, key=result.get))
-print(result[316])
+number = min(result, key=result.get)
+print(result[number])
+
