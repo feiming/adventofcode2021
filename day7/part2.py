@@ -9,8 +9,7 @@ for x in range(2000):
     fuel = 0
     for i in data:
         step = abs(x - i)
-        fuel += step + sum([c for c in range(step)])
+        fuel += step + (step*step-1/2)
     result[x] = fuel
 number = min(result, key=result.get)
 print(result[number])
-
